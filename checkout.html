@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Bag & Checkout | Vivid Strokes</title>
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Cinzel:wght@400;700&family=MedievalSharp&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="watercolor-canvas"></canvas>
+
+    <div class="main-content">
+        <!-- Back Navigation -->
+        <div class="top-nav checkout-nav">
+            <a href="index.html" class="paint-link back-btn">← Return to Studio</a>
+            <a href="portfolio.html" class="paint-link back-btn">Browse Gallery →</a>
+        </div>
+
+        <h1>Studio Bag</h1>
+        <p class="sub-header">Review your commissions and prints before sending your order request</p>
+
+        <div class="checkout-layout">
+            <!-- Left Side: Bag Items -->
+            <div class="glass-card bag-card">
+                <div class="popup-header">
+                    <h4>Your Manifested Items</h4>
+                    <button type="button" id="clear-bag-btn" class="clear-btn">Clear Bag</button>
+                </div>
+
+                <div id="checkout-bag-list" class="bag-list">
+                    <p class="empty-cart">Your studio bag is currently empty.</p>
+                </div>
+
+                <div class="bag-summary-footer">
+                    <div class="cart-total-row">
+                        <span>Estimated Total:</span>
+                        <span id="checkout-total">$0.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Order Submission Form -->
+            <div class="glass-card order-form-card">
+                <div class="popup-header">
+                    <h4>Complete Order</h4>
+                </div>
+
+                <div id="order-form-container">
+                    <form action="https://formspree.io" method="POST" id="final-checkout-form">
+                        <input type="hidden" name="order_details" id="hidden-order-details">
+                        <input type="hidden" name="order_total" id="hidden-order-total">
+
+                        <label class="input-label">YOUR NAME</label>
+                        <input type="text" name="customer_name" placeholder="Enter your name..." class="glass-input" required>
+
+                        <label class="input-label">YOUR EMAIL (FOR INVOICE & UPDATES)</label>
+                        <input type="email" name="customer_email" placeholder="you@example.com" class="glass-input" required>
+
+                        <label class="input-label">PREFERRED PAYMENT METHOD</label>
+                        <select name="payment_method" class="glass-input">
+                            <option value="PayPal Invoice">PayPal Invoice</option>
+                            <option value="Venmo">Venmo</option>
+                            <option value="Cash App">Cash App</option>
+                            <option value="Discuss via Email">Discuss via Email</option>
+                        </select>
+
+                        <label class="input-label">EXTRA NOTES OR REFERENCES</label>
+                        <textarea name="extra_notes" placeholder="Any extra details, shipping info, or links to reference images..." class="glass-input" rows="3"></textarea>
+
+                        <button type="submit" id="submit-order-btn" class="paint-link full-btn">Send Order to Studio ✨</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Artist Inquiry Bubble -->
+    <div class="floating-dock">
+        <div class="bubble-row">
+            <div id="inquiry-guide" class="guide-label">
+                <span>Questions? Ask the Artist</span>
+                <span class="close-guide">&times;</span>
+            </div>
+            <button id="inquiry-launcher" class="bubble-launcher" aria-label="Artist Inquiry">
+                <span>💬</span>
+            </button>
+        </div>
+    </div>
+
+    <div id="inquiry-window" class="glass-card popup-window">
+        <div id="inquiry-content">
+            <div class="popup-header">
+                <h4>Artist Inquiry</h4>
+                <span class="close-btn" id="close-inquiry">&times;</span>
+            </div>
+            <form action="https://formspree.io" method="POST" id="inquiry-form">
+                <input type="text" name="name" placeholder="Your Name" class="glass-input" required>
+                <input type="email" name="email" placeholder="Your Email" class="glass-input" required>
+                <textarea name="message" placeholder="Ask a question..." class="glass-input" rows="4" required></textarea>
+                <button type="submit" id="crow-btn" class="paint-link full-btn">Send Crow</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="checkout.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
