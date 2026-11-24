@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Vivid Strokes</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=MedievalSharp&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Cinzel:wght@400;700&family=MedievalSharp&display=swap" rel="stylesheet">
 </head>
 <body>
     <canvas id="watercolor-canvas"></canvas>
 
     <div class="main-content">
-        <!-- Top Back Link to vividstrokes.html -->
+        <!-- Top Back Link -->
         <div class="top-nav">
-            <a href="vividstrokes.html" class="paint-link back-btn">← Return to Studio</a>
+            <a href="index.html" class="paint-link back-btn">← Return to Studio</a>
         </div>
 
         <h1>My Gallery</h1>
@@ -25,9 +25,9 @@
             <p class="loading-text">Loading masterpieces...</p>
         </div>
 
-        <!-- Bottom Back Link to vividstrokes.html -->
+        <!-- Bottom Back Link -->
         <div class="link-container">
-            <a href="vividstrokes.html" class="paint-link">← Return to Studio</a>
+            <a href="index.html" class="paint-link">← Return to Studio</a>
         </div>
     </div>
 
@@ -69,7 +69,7 @@
                 <h4>Artist Inquiry</h4>
                 <span class="close-btn" id="close-inquiry">&times;</span>
             </div>
-            <form action="https://formspree.io/f/xlgpbjyl" method="POST" id="inquiry-form">
+            <form action="https://formspree.io" method="POST" id="inquiry-form">
                 <input type="text" name="name" placeholder="Your Name" class="glass-input" required>
                 <input type="email" name="email" placeholder="Your Email" class="glass-input" required>
                 <textarea name="message" placeholder="Ask a question..." class="glass-input" rows="4" required></textarea>
