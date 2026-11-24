@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Vivid Strokes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=MedievalSharp&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="watercolor-canvas"></canvas>
+
+    <div class="main-content">
+        <!-- Top Back Link to vividstrokes.html -->
+        <div class="top-nav">
+            <a href="vividstrokes.html" class="paint-link back-btn">← Return to Studio</a>
+        </div>
+
+        <h1>My Gallery</h1>
+        <p class="sub-header">Click an image to inspect the full masterpiece or order a print</p>
+
+        <div id="portfolio-grid" class="gallery-grid">
+            <p class="loading-text">Loading masterpieces...</p>
+        </div>
+
+        <!-- Bottom Back Link to vividstrokes.html -->
+        <div class="link-container">
+            <a href="vividstrokes.html" class="paint-link">← Return to Studio</a>
+        </div>
+    </div>
+
+    <!-- Full-Screen Image Modal -->
+    <div id="image-modal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="full-image">
+        <div id="modal-caption" class="glass-card"></div>
+    </div>
+
+    <!-- FLOATING BUBBLE DOCK -->
+    <div class="floating-dock">
+        <div class="bubble-row">
+            <div class="guide-label" id="checkout-guide">
+                <span>Order Prints & Commissions</span>
+                <span class="close-guide">&times;</span>
+            </div>
+            <button id="checkout-launcher" class="bubble-launcher checkout-bubble" aria-label="Open Checkout">
+                <span>🛒</span>
+                <span id="cart-badge" class="cart-badge">0</span>
+            </button>
+        </div>
+
+        <div class="bubble-row">
+            <div class="guide-label" id="inquiry-guide">
+                <span>Artist Inquiry (Email Me)</span>
+                <span class="close-guide">&times;</span>
+            </div>
+            <button id="inquiry-launcher" class="bubble-launcher" aria-label="Open Artist Inquiry">
+                <span>💬</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- POPUP 1: ARTIST INQUIRY WINDOW -->
+    <div id="inquiry-window" class="glass-card popup-window">
+        <div id="inquiry-content">
+            <div class="popup-header">
+                <h4>Artist Inquiry</h4>
+                <span class="close-btn" id="close-inquiry">&times;</span>
+            </div>
+            <form action="https://formspree.io/f/xlgpbjyl" method="POST" id="inquiry-form">
+                <input type="text" name="name" placeholder="Your Name" class="glass-input" required>
+                <input type="email" name="email" placeholder="Your Email" class="glass-input" required>
+                <textarea name="message" placeholder="Ask a question..." class="glass-input" rows="4" required></textarea>
+                <button type="submit" id="crow-btn" class="paint-link full-btn">Send Crow</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- POPUP 2: CHECKOUT & COMMISSION WINDOW -->
+    <div id="checkout-window" class="glass-card popup-window">
+        <div id="checkout-content">
+            <div class="popup-header">
+                <h4>Studio Checkout</h4>
+                <span class="close-btn" id="close-checkout">&times;</span>
+            </div>
+
+            <div class="checkout-options">
+                <label class="input-label">Add Print or Commission:</label>
+                <select id="item-selector" class="glass-input">
+                    <option value="Digital Art|5">Digital Art — $5</option>
+                    <option value="Traditional Pieces|10">Traditional Pieces — $10</option>
+                    <option value="Animations|15">Animations — $15</option>
+                    <option value="Paintings|20">Paintings — $20</option>
+                    <option value="Clay Structures|30">Clay Structures — $30</option>
+                </select>
+                <button type="button" id="add-item-btn" class="paint-link full-btn small-btn">+ Add to Bag</button>
+            </div>
+
+            <div id="cart-items" class="cart-items">
+                <p class="empty-cart">Your studio bag is empty.</p>
+            </div>
+
+            <div class="cart-total-row">
+                <span>Total:</span>
+                <span id="cart-total">$0.00</span>
+            </div>
+
+            <a href="checkout.html" class="paint-link full-btn">Proceed to Checkout →</a>
+        </div>
+    </div>
+
+    <script src="portfolio.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
